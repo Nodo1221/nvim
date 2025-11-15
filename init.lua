@@ -28,6 +28,10 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.smartindent = true
 
+-- Don't fuck up the selection after >
+vim.keymap.set('x', '>', '>gv', { noremap = true, silent = true })
+vim.keymap.set('x', '<', '<gv', { noremap = true, silent = true })
+
 -- Searching
 vim.o.hlsearch = true
 vim.o.ignorecase = true
