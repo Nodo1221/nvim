@@ -6,7 +6,7 @@ vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 require("lazy").setup({
     { "echasnovski/mini.pairs" },
     { "folke/tokyonight.nvim"},
-    { "lervag/vimtex" },
+    --{ "lervag/vimtex" },
     { "preservim/nerdcommenter" },
 })
 
@@ -76,5 +76,3 @@ vim.o.mouse = "i"
 
 -- Keymaps
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
-
-
