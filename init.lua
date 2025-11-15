@@ -45,6 +45,7 @@ vim.o.writebackup = false
 -- No dumbass bells
 vim.opt.errorbells = false
 vim.opt.visualbell = false
+vim.opt.belloff=all
 
 -- Manage splits
 vim.o.splitbelow = true
