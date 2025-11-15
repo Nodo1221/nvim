@@ -1,0 +1,7 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
+  "mini.pairs": { "branch": "main", "commit": "b316e68f2d242d5bd010deaab645daa27ed86297" },
+  "nerdcommenter": { "branch": "master", "commit": "02a3b6455fa07b61b9440a78732f1e9b7876c991" },
+  "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" },
+  "vimtex": { "branch": "master", "commit": "32bcb3922c20588e00de68f73c86312eda2141ad" }
+}
