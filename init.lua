@@ -6,7 +6,7 @@ vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 require("lazy").setup({
     { "echasnovski/mini.pairs" },
     { "folke/tokyonight.nvim"},
-    { "lervag/vimtex" },
+    --{ "lervag/vimtex" },
     { "preservim/nerdcommenter" },
 })
 
@@ -46,6 +46,11 @@ vim.o.undofile = true
 vim.o.backup = false
 vim.o.writebackup = false
 
+-- No dumbass bells
+vim.opt.errorbells = false
+vim.opt.visualbell = false
+vim.opt.belloff=all
+
 -- Manage splits
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -78,7 +83,8 @@ vim.o.swapfile = true
 -- Disable fuckedup mouse
 vim.o.mouse = "i"
 
--- Keymaps
+-- Better save
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
 
-
+-- Exit terminal mode with <Esc>
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
