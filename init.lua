@@ -8,6 +8,18 @@ require("lazy").setup({
     { "folke/tokyonight.nvim"},
     { "lervag/vimtex" },
     { "preservim/nerdcommenter" },
+    { "neovim/nvim-lspconfig" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = { "rust", "javascript", "c", "cpp"},
+                auto_install = true,
+                highlight = { enable = true },
+            })
+        end,
+    },
 })
 
 require("mini.pairs").setup()
@@ -37,6 +49,7 @@ vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.incsearch = true
+vim.keymap.set("n", "<F1>", ":nohlsearch<CR>")
 
 -- Colours
 vim.o.termguicolors = true
@@ -45,6 +58,16 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.backup = false
 vim.o.writebackup = false
+
+vim.keymap.set("i", ".", ".<C-g>u")
+vim.keymap.set("i", "?", "?<C-g>u")
+vim.keymap.set("i", "!", "!<C-g>u")
+vim.keymap.set("i", ",", ",<C-g>u")
+vim.keymap.set("i", ";", ";<C-g>u")
+
+-- Spellcheck
+vim.opt.spelllang = { "en_gb", "pl" }
+vim.keymap.set("n", "<F2>", "<cmd>set spell!<CR>")
 
 -- No dumbass bells
 vim.opt.errorbells = false
@@ -88,3 +111,4 @@ vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
 
 -- Exit terminal mode with <Esc>
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+
