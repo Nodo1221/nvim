@@ -6,7 +6,7 @@ vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 require("lazy").setup({
     { "echasnovski/mini.pairs" },
     { "folke/tokyonight.nvim"},
-    --{ "lervag/vimtex" },
+    { "lervag/vimtex" },
     { "preservim/nerdcommenter" },
 })
 
@@ -58,8 +58,8 @@ vim.o.splitright = true
 vim.keymap.set("n", "<C-->", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<C-=>", ":vertical resize +2<CR>", opts)
 
-vim.keymap.set("n", "<C-[>", ":resize -2<CR>", opts)
-vim.keymap.set("n", "<C-]>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<C-;>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<C-'>", ":resize +2<CR>", opts)
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left split" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to below split" })
