@@ -1,33 +1,14 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
-
-require("lazy").setup({
-    { "echasnovski/mini.pairs" },
-    { "folke/tokyonight.nvim"},
-    { "lervag/vimtex" },
-    { "preservim/nerdcommenter" },
-    { "neovim/nvim-lspconfig" },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = { "rust", "javascript", "c", "cpp", "latex"},
-                auto_install = true,
-                highlight = { enable = true },
-            })
-        end,
-    },
-})
-
+require("plugins")
+require("lsp")
 require("mini.pairs").setup()
 
 -- Colourscheme
-vim.cmd.colorscheme("tokyonight-storm")
+vim.cmd.colorscheme("gruvbox")
 
---vim.g.vimtex_view_method = "zathura"        -- choose your PDF viewer
+--vim.g.vimtex_view_method = "zathura"        -- PDF viewer
 --vim.g.vimtex_compiler_method = "latexmk"   -- default compiler
 
 -- Numbering
@@ -106,7 +87,7 @@ vim.o.swapfile = true
 -- Disable fuckedup mouse
 vim.o.mouse = "i"
 
--- Better save
+-- Quicksave
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
 
 -- Exit terminal mode with <Esc>
