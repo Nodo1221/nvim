@@ -8,6 +8,12 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "ellisonleao/gruvbox.nvim" }, 
     {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        }
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()

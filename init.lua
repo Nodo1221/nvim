@@ -4,6 +4,17 @@ vim.g.maplocalleader = " "
 require("plugins")
 require("lsp")
 require("mini.pairs").setup()
+require("nvim-tree").setup({
+    view = {
+        width = 24,
+    },
+    tab = {
+        sync = {
+            open = true,
+            close = true,
+        },
+    },
+})
 
 -- Colourscheme
 vim.cmd.colorscheme("gruvbox")
@@ -86,7 +97,7 @@ vim.o.swapfile = true
 
 -- Disable fuckedup mouse
 vim.o.mouse = "a"
-vim.opt.mousescroll = "ver:1"
+vim.opt.mousescroll = "ver:1,hor:1"
 
 -- Quicksave
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
