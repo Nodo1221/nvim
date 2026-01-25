@@ -85,7 +85,8 @@ vim.o.directory = swap_dir
 vim.o.swapfile = true
 
 -- Disable fuckedup mouse
-vim.o.mouse = "i"
+vim.o.mouse = "a"
+vim.opt.mousescroll = "ver:1"
 
 -- Quicksave
 vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save file" })
