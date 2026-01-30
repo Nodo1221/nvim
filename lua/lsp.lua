@@ -27,8 +27,11 @@ vim.opt.updatetime = 1000
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
     vim.diagnostic.open_float(nil, { focusable = false })
+    vim.lsp.buf.hover(opts)
   end,
 })
+
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP hover information' })
 
 -- Autoselect the first option
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
