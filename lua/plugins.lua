@@ -15,12 +15,21 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = { "rust", "javascript", "c", "cpp"},
-                auto_install = true,
-                highlight = { enable = true },
+            require("nvim-treesitter").setup({
+                install_dir = vim.fn.stdpath("data") .. "/site",
+            })
+            require("nvim-treesitter").install({
+                "rust", "javascript", "c", "cpp", "markdown", "markdown_inline", "comment",
+            })
+
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = { "rust", "javascript", "c", "cpp", "markdown", "markdown_inline" },
+                callback = function()
+                    vim.treesitter.start()
+                end,
             })
         end,
     },
