@@ -22,12 +22,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Show warnings and erorrs on CursorHold
+-- Show warnings and erorrs on K keypress
 vim.opt.updatetime = 1000
 vim.api.nvim_create_autocmd("CursorHold", {
   callback = function()
     vim.diagnostic.open_float(nil, { focusable = false })
-    vim.lsp.buf.hover(opts)
   end,
 })
 
